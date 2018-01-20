@@ -1,2 +1,3 @@
-# chat-bubbles
-Chat bubble UI Example
+# Chat Bubbles #
+
+_Chat Bubble UI Example_
