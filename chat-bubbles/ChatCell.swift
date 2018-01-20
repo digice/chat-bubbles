@@ -18,6 +18,10 @@ class ChatCell: UITableViewCell {
   
   @IBOutlet weak var messageLabel: UILabel!
   
+  @IBOutlet weak var messageLeading: NSLayoutConstraint!
+  
+  @IBOutlet weak var messageTrailing: NSLayoutConstraint!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
   }
@@ -34,7 +38,7 @@ class ChatCell: UITableViewCell {
     if sent == true {
     
       // set the background image
-      self.bubbleView?.image = Image.bubbleLeft
+      self.bubbleView?.image = Image.bubbleRight
       
       // set the bubble color (blue)
       self.bubbleView?.tintColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
@@ -43,13 +47,17 @@ class ChatCell: UITableViewCell {
       self.messageLabel?.textColor = .black
       
       // align the bubble right
-      self.bubbleLeading.constant = 100
-      self.bubbleTrailing.constant = 10
+      self.bubbleLeading.constant = 96
+      self.bubbleTrailing.constant = 12
+      
+      // position the message in the bubble
+      self.messageLeading.constant = 16
+      self.messageTrailing.constant = 24
       
     } else {
     
       // set the background image
-      self.bubbleView?.image = Image.bubbleRight
+      self.bubbleView?.image = Image.bubbleLeft
 
       // set the bubble color (light gray)
       self.bubbleView?.tintColor = UIColor(red: 15/255, green: 121/255, blue: 252/255, alpha: 1)
@@ -58,8 +66,12 @@ class ChatCell: UITableViewCell {
       self.messageLabel?.textColor = .white
       
       // align the bubble left
-      self.bubbleLeading.constant = 10
-      self.bubbleTrailing.constant = 100
+      self.bubbleLeading.constant = 12
+      self.bubbleTrailing.constant = 96
+
+      // indent the message
+      self.messageLeading.constant = 24
+      self.messageTrailing.constant = 16
       
     }
     
