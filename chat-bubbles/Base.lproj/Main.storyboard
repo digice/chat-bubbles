@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PUV-s3-u3n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,9 +11,38 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="2bj-ly-2lb">
+            <objects>
+                <viewController storyboardIdentifier="view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PUV-s3-u3n" customClass="ViewController" customModule="chat_bubbles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pad-Gt-3c6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEn-0P-M2z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="fLH-Kt-BIW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MEn-0P-M2z" secondAttribute="trailing" id="G7q-Lw-6Kq"/>
+                            <constraint firstItem="MEn-0P-M2z" firstAttribute="top" secondItem="Pad-Gt-3c6" secondAttribute="top" id="may-fo-qkN"/>
+                            <constraint firstAttribute="bottom" secondItem="MEn-0P-M2z" secondAttribute="bottom" id="uzg-S1-UVU"/>
+                            <constraint firstItem="MEn-0P-M2z" firstAttribute="leading" secondItem="Pad-Gt-3c6" secondAttribute="leading" id="zI6-V8-deB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9sR-iW-YD0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHL-U8-hTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="134"/>
+        </scene>
+        <!--Chat Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chat_bubbles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ChatController" customModule="chat_bubbles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,18 +80,18 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bubbleLeading" destination="D8J-ku-EhL" id="uek-jT-Oks"/>
-                                            <outlet property="bubbleTrailing" destination="dN3-Ms-xyV" id="mGr-md-xNN"/>
-                                            <outlet property="bubbleView" destination="K85-qW-v1f" id="2Lm-Sc-Srg"/>
-                                            <outlet property="messageLabel" destination="Tbh-iH-1YN" id="bHg-iS-7lv"/>
-                                            <outlet property="messageLeading" destination="lWO-sD-EEh" id="USx-GI-eIs"/>
-                                            <outlet property="messageTrailing" destination="j39-gS-N5w" id="Leq-3C-gRv"/>
+                                            <outlet property="bubbleLeading" destination="D8J-ku-EhL" id="bKH-gZ-ha1"/>
+                                            <outlet property="bubbleTrailing" destination="dN3-Ms-xyV" id="V4H-HU-SeR"/>
+                                            <outlet property="bubbleView" destination="K85-qW-v1f" id="yhg-Ag-odV"/>
+                                            <outlet property="messageLabel" destination="Tbh-iH-1YN" id="c4Q-AZ-tcM"/>
+                                            <outlet property="messageLeading" destination="lWO-sD-EEh" id="oON-On-hg7"/>
+                                            <outlet property="messageTrailing" destination="j39-gS-N5w" id="gq7-yZ-Vku"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ek3-OK-eZP"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uTu-bu-75U"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QNz-5o-FUw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RWD-2L-s4G"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -76,11 +105,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="7GR-bA-CGc" id="jn1-CU-nYK"/>
+                        <outlet property="tableView" destination="7GR-bA-CGc" id="cZM-Tl-9pd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="79" y="139"/>
         </scene>
     </scenes>
 </document>
