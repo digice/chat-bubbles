@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A1317B62014146400CD3586 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1317B52014146400CD3586 /* ChatController.swift */; };
+		9A1317B8201416F800CD3586 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1317B7201416F800CD3586 /* Keyboard.swift */; };
 		9A975AAE201405DF0067F1AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A975AAD201405DF0067F1AD /* AppDelegate.swift */; };
 		9A975AB0201405DF0067F1AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A975AAF201405DF0067F1AD /* ViewController.swift */; };
 		9A975AB3201405DF0067F1AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A975AB1201405DF0067F1AD /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		9A1317B52014146400CD3586 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		9A1317B7201416F800CD3586 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		9A975AAA201405DF0067F1AD /* chat-bubbles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-bubbles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A975AAD201405DF0067F1AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A975AAF201405DF0067F1AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		9A975AAC201405DF0067F1AD /* chat-bubbles */ = {
 			isa = PBXGroup;
 			children = (
+				9A1317B7201416F800CD3586 /* Keyboard.swift */,
 				9A975AAD201405DF0067F1AD /* AppDelegate.swift */,
 				9A975AAF201405DF0067F1AD /* ViewController.swift */,
 				9A1317B52014146400CD3586 /* ChatController.swift */,
@@ -162,6 +165,7 @@
 			files = (
 				9A975AB0201405DF0067F1AD /* ViewController.swift in Sources */,
 				9ACCB246201407FD0004F4F9 /* ChatCell.swift in Sources */,
+				9A1317B8201416F800CD3586 /* Keyboard.swift in Sources */,
 				9ACCB247201407FD0004F4F9 /* Message.swift in Sources */,
 				9ACCB245201407FD0004F4F9 /* Image.swift in Sources */,
 				9A975AAE201405DF0067F1AD /* AppDelegate.swift in Sources */,

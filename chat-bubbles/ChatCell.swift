@@ -47,12 +47,12 @@ class ChatCell: UITableViewCell {
       self.messageLabel?.textColor = .black
       
       // align the bubble right
-      self.bubbleLeading.constant = 96
-      self.bubbleTrailing.constant = 12
+      self.bubbleLeading?.constant = 96
+      self.bubbleTrailing?.constant = 12
       
       // position the message in the bubble
-      self.messageLeading.constant = 16
-      self.messageTrailing.constant = 24
+      self.messageLeading?.constant = 16
+      self.messageTrailing?.constant = 24
       
     } else {
     
@@ -66,12 +66,12 @@ class ChatCell: UITableViewCell {
       self.messageLabel?.textColor = .white
       
       // align the bubble left
-      self.bubbleLeading.constant = 12
-      self.bubbleTrailing.constant = 96
+      self.bubbleLeading?.constant = 12
+      self.bubbleTrailing?.constant = 96
 
       // indent the message
-      self.messageLeading.constant = 24
-      self.messageTrailing.constant = 16
+      self.messageLeading?.constant = 24
+      self.messageTrailing?.constant = 16
       
     }
     

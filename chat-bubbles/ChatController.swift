@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+  
   // MARK: - Properties
   
   var objects: [Message] = [
@@ -24,6 +24,25 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   @IBOutlet weak var tableView: UITableView!
   
+  @IBOutlet weak var entryView: UIView!
+  
+  @IBOutlet weak var borderView: UIView!
+  
+  @IBOutlet weak var textField: UITextField!
+  
+  @IBOutlet weak var sendButton: UIButton!
+  
+  @IBAction func send(_ sender: UIButton) {
+    if let text = self.textField.text {
+      if text.count > 0 {
+        let message = Message(time: Date(), string: text, sent: true)
+        self.objects.append(message)
+        self.textField.text = ""
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
   // MARK: - UIViewController
   
   override func viewDidLoad() {
@@ -33,6 +52,14 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
     self.tableView.estimatedRowHeight = 44
     self.tableView.rowHeight = UITableViewAutomaticDimension
     self.tableView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10); // top, left, bottom, right
+    
+    self.borderView.layer.borderColor = UIColor.lightGray.cgColor
+    self.borderView.layer.borderWidth = 1
+    self.borderView.layer.cornerRadius = 18
+    
+    self.sendButton.isEnabled = false
+    self.sendButton.tintColor = .lightGray
+    
   }
   
   // MARK: - UITableViewDataSource
@@ -47,5 +74,25 @@ class ChatController: UIViewController, UITableViewDelegate, UITableViewDataSour
     cell.configureCell(sent: message.sent, string: message.string)
     return cell
   }
-
+  
+  // MARK: - UITextFieldDelegate
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    self.send(self.sendButton)
+    self.view.endEditing(true)
+    return true
+  }
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    self.sendButton.isEnabled = true
+    self.sendButton.tintColor = UIColor(red: 15/255, green: 121/255, blue: 252/255, alpha: 1)
+    let offset = CGPoint(x: 0, y: self.tableView.bounds.size.height - self.tableView.contentSize.height)
+    self.tableView.setContentOffset(offset, animated: true)
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    self.sendButton.isEnabled = false
+    self.sendButton.tintColor = .lightGray
+  }
+  
 }
