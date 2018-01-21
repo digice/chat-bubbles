@@ -8,12 +8,16 @@
 
 import UIKit
 
+/**
+ * Reference unwrapped, configured versions of images in xcassets
+ */
+
 class Image {
-    
+  
   static let bubbleLeft: UIImage = UIImage(named: "bubble_left")!.resizableImage(withCapInsets: UIEdgeInsetsMake(17, 21, 17, 21), resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
   
   static let bubbleRight: UIImage = UIImage(named: "bubble_right")!.resizableImage(withCapInsets: UIEdgeInsetsMake(17, 21, 17, 21), resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
   
   static let send: UIImage = UIImage(named: "send")!
   
-}
+} // ./image

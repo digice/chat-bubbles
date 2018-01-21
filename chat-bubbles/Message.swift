@@ -10,10 +10,12 @@ import UIKit
 
 struct Message {
   
+  // MARK: - Properties
+  
   var time: Date
   
   var string: String
   
   var sent: Bool
   
-}
+} // ./Message

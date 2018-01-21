@@ -60,5 +60,4 @@ class ViewController: UIViewController {
     NotificationCenter.default.removeObserver(self)
   } // ./viewDidDisappear
 
-}
-
+} // ./ViewController

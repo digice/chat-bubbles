@@ -10,6 +10,8 @@ import UIKit
 
 class ChatCell: UITableViewCell {
   
+  // MARK: - Outlets
+  
   @IBOutlet weak var bubbleView: UIImageView!
   
   @IBOutlet weak var bubbleTrailing: NSLayoutConstraint!
@@ -22,21 +24,15 @@ class ChatCell: UITableViewCell {
   
   @IBOutlet weak var messageTrailing: NSLayoutConstraint!
   
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    // prevent default behavior
-  }
+  // MARK: - ChatCell
   
   func configureCell(sent: Bool, string: String) {
-  
+    
     // set the text of the bubble
     self.messageLabel?.text = string
     
     if sent == true {
-    
+      
       // set the background image
       self.bubbleView?.image = Image.bubbleRight
       
@@ -54,11 +50,13 @@ class ChatCell: UITableViewCell {
       self.messageLeading?.constant = 16
       self.messageTrailing?.constant = 24
       
-    } else {
-    
+    } // ./send bubble
+      
+    else {
+      
       // set the background image
       self.bubbleView?.image = Image.bubbleLeft
-
+      
       // set the bubble color (light gray)
       self.bubbleView?.tintColor = UIColor(red: 15/255, green: 121/255, blue: 252/255, alpha: 1)
       
@@ -68,13 +66,33 @@ class ChatCell: UITableViewCell {
       // align the bubble left
       self.bubbleLeading?.constant = 12
       self.bubbleTrailing?.constant = 96
-
+      
       // indent the message
       self.messageLeading?.constant = 24
       self.messageTrailing?.constant = 16
       
-    }
+    } // ./receive bubble
     
   } // ./configureCell
+
+  // MARK: - UITableViewCell
   
-}
+  /**
+   * Awake From Nib
+   * Called when the view has been instantiated
+   */
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+  
+  /**
+   * Set Selected
+   * Called when user selects a cell
+   * - parameter: Bool (selected)
+   * - parameter: Bool (animated)
+   */
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    // prevent default behavior by not calling super.setSelected()
+  } // ./setSelected
+  
+} // ./ChatCell

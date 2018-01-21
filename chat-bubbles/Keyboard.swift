@@ -19,7 +19,7 @@ class Keyboard {
   
   /**
    * Create new Keyboard
-   * - parameter: CGRect (frame in relation to AppController coordinatespace)
+   * - parameter: CGRect (frame in relation to AppController coordinate space)
    */
   init(frame: CGRect) {
     self.frame = frame
